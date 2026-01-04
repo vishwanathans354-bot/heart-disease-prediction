@@ -1,0 +1,9 @@
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+<div class="center-box card">
+<h2>Restricted Records</h2>
+<form method="post">
+<input type="password" name="key" placeholder="Enter access key">
+<button>View Records</button>
+</form>
+{% if error %}<p style="color:red">{{error}}</p>{% endif %}
+</div>

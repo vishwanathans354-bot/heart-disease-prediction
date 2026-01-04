@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+<div class="sidebar">
+<h1>❤️ HEART AI</h1>
+<a href="/">Prediction</a>
+<a href="/records">Records</a>
+<a href="/ai-analysis">AI Insights</a>
+</div>
+
+<div class="main">
+<div class="card">
+<h2>Patient Records</h2>
+<table>
+<tr><th>ID</th><th>Name</th><th>Age</th><th>Chol</th><th>Risk</th><th>PDF</th></tr>
+{% for r in data %}
+<tr>
+<td>{{r[0]}}</td><td>{{r[1]}}</td>
+<td>{{r[4]}}</td><td>{{r[7]}}</td>
+<td>{{r[11]}}</td>
+<td><a class="btn" href="/pdf/{{r[0]}}">PDF</a></td>
+</tr>
+{% endfor %}
+</table>
+</div>
+</div>

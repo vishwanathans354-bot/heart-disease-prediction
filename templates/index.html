@@ -1,0 +1,32 @@
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+<div class="sidebar">
+<h1>❤️ HEART AI</h1>
+<a href="/">Prediction</a>
+<a href="/records">Records</a>
+<a href="/ai-analysis">AI Insights</a>
+</div>
+
+<div class="main">
+<div class="card">
+<h2>Heart Disease Prediction</h2>
+
+<form method="post">
+<input name="name" placeholder="Name" required>
+<input name="phone" placeholder="Phone" required>
+<select name="gender"><option>Male</option><option>Female</option></select>
+<input name="age" placeholder="Age" required>
+<input name="cp" placeholder="Chest Pain" required>
+<input name="trestbps" placeholder="Blood Pressure" required>
+<input name="chol" placeholder="Cholesterol" required>
+<input name="thalach" placeholder="Heart Rate" required>
+<input name="oldpeak" placeholder="Oldpeak" required>
+<button>Predict</button>
+</form>
+
+{% if result %}
+<div class="card {{risk.split()[0]|lower}}">
+<h3>{{result}} | {{risk}} | {{prob}}%</h3>
+</div>
+{% endif %}
+</div>
+</div>

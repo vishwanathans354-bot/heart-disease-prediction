@@ -1,0 +1,25 @@
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+<div class="sidebar">
+<h1>❤️ HEART AI</h1>
+<a href="/">Prediction</a>
+<a href="/records">Records</a>
+<a href="/ai-analysis">AI Insights</a>
+</div>
+
+<div class="main">
+<div class="card">
+<h2>AI Health Insights</h2>
+<p>{{summary}}</p>
+<canvas id="c"></canvas>
+</div>
+</div>
+
+<script>
+new Chart(c,{
+type:"doughnut",
+data:{labels:{{labels|safe}},
+datasets:[{data:{{values|safe}},
+backgroundColor:["#22c55e","#facc15","#ef4444"]}]}
+})
+</script>
